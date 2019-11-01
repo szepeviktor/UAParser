@@ -10,28 +10,28 @@ interface BrowserResultInterface
     /**
      * Returns the browser family name.
      *
-     * @return string
+     * @return string|null
      */
     public function getFamily();
 
     /**
      * Returns the browser major version.
      *
-     * @return string
+     * @return int|null
      */
     public function getMajor();
 
     /**
      * Returns the browser minor version.
      *
-     * @return string
+     * @return int|null
      */
     public function getMinor();
 
     /**
      * Returns the browser patch version.
      *
-     * @return string
+     * @return int|null
      */
     public function getPatch();
 
@@ -39,14 +39,14 @@ interface BrowserResultInterface
     * Returns the browser full version, including the
     * major, minor and patch parts.
     *
-    * @return string
+    * @return string|null
     */
     public function getVersionString();
 
     /**
      * Returns the browser rendering engine.
      *
-     * @return string
+     * @return string|null
      */
     public function getRenderingEngine();
 
@@ -55,5 +55,5 @@ interface BrowserResultInterface
      *
      * @param array $data An array.
      */
-    public function fromArray();
+    public function fromArray(array $data);
 }

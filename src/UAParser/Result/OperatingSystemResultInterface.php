@@ -40,5 +40,5 @@ interface OperatingSystemResultInterface
      *
      * @param array $data An array.
      */
-    public function fromArray();
+    public function fromArray(array $data);
 }

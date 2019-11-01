@@ -8,32 +8,32 @@ namespace UAParser\Result;
 class BrowserResult implements BrowserResultInterface
 {
     /**
-     * @var string
+     * @var string|null
      */
     private $family = null;
 
     /**
-     * @var string
+     * @var int|null
      */
     private $major = null;
 
     /**
-     * @var string
+     * @var int|null
      */
     private $minor = null;
 
     /**
-     * @var string
+     * @var int|null
      */
     private $patch = null;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $versionString = null;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $renderingEngine = null;
 
@@ -67,9 +67,9 @@ class BrowserResult implements BrowserResultInterface
     public function getVersionString()
     {
         if (null === $this->versionString) {
-            $versionString = null !== $this->getMajor() ? $this->getMajor() : '';
-            $versionString = null !== $this->getMinor() ? $versionString.'.'.$this->getMinor() : $versionString;
-            $versionString = null !== $this->getPatch() ? $versionString.'.'.$this->getPatch() : $versionString;
+            $versionString = null !== $this->getMajor() ? (string)$this->getMajor() : '';
+            $versionString = null !== $this->getMinor() ? $versionString.'.'.(string)$this->getMinor() : $versionString;
+            $versionString = null !== $this->getPatch() ? $versionString.'.'.(string)$this->getPatch() : $versionString;
 
             $this->versionString = $versionString;
         }
